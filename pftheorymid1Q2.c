@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(){
 
-    int menu,expenses,weeklySalary;
+    int menu,expenses,weeklySalary;                                 //this is Question3 of Mid1
     float foodItems,bill,education,health;
     printf("1. Calculate yearly salary and assign a salary class\n");
     printf("2. Calculate monthly expenses and assign a household class\n");
