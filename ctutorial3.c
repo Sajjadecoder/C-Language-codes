@@ -1,158 +1,61 @@
+/*Mr. Johnson would like to know how many As, Bs, Cs, Ds, and Fs his students
+received on a test. He has 20 students who took the test. He would like to enter the
+student number and the number grade for the test for each student. Develop the so-
+lution to print out each student’s student number, number grade, letter grade, and
+the total number of As, Bs, Cs, Ds, and Fs. His grading scale is as follows: 90–100
+is an A, 78–89 is a B, 65–77 is a C, 50–64 is a D, and below 50 is an F*/
 #include<stdio.h>
-// divisible by 2
-/*int main() {
-    int num;
-    printf("enter a number: ");
-    scanf("%d", &num);
-    printf("%d", num%2 == 0);
-    return 0;
-}
-*/
-//num >9 & <100
-/*int main() {
-    int x;
-    printf("enter a number ", &x);
-    scanf("%d", &x);
-    printf("%d", x>9 && x<100);
-    
-}
-*/
-/*
-int main() {
-    // avg of 3 numbers
-    int a,b,c;
-    double avg;
-    printf("enter a number: ");
-    scanf("%d", &a);
-    printf("enter a number: ");
-    scanf("%d", &b);
-    printf("enter a number: ");
-    scanf("%d", &c);    
-    int sum = a+b+c;
-    printf("sum is %d \n", sum);
-    printf("average is %f", sum / 3.0);
-}
-*/
-/*
-int main() {
-    //Grading of the marks
-    int a;
-    printf("enter a number: ");
-    scanf("%d", &a);
-    if (a>100) {
-        printf("Invalid marks");
-    }
-    else if (a>=90)
+int main(){
+    char grade[20];
+    int number[20];
+    int stdnum[20];
+    int countA=0;int countB=0;int countC=0;int countD=0;int countF=0;
+    for (int i = 0; i < 20; i++)
     {
-        printf("A*");
-    }
-    else if (a>=80)
-    {
-        printf("A");
-    }
-    else if (a>=70)
-    {
-        printf("B");
-    }
-    else
-    {
-        printf("fail");
-    }
-}
-*/
-/*  
-int main(){  //for to next loop
-    int i;
-    for ( i = 0; i < 5; i+=1)
-    {
-        printf("hello world \n");
-    }
-    
-}
-*/
-/*
-int main(){  // while loop
-    int i = 1;
-    while (i <= 5)
-    {
-        printf("%d \n", i);
-        i ++;
-    }
-    
-}
-*/
-/*
-int main(){  // printing numbers till the user requirement
-    int n;
-    printf("enter the number: ");
-    scanf("%d", &n);
-    for ( int i = 0; i <= n; i++)
-    {
-        printf("%d \n", i);
-    }
-    
-}
-*/
-/*
-int main(){ // printing the tables of any number
-    int n;
-    printf("enter a num ");
-    scanf("%d", &n);
-    for ( int i = 0; i <=10; i++)
-    {
-        printf("%d \n",n*i);
-    }
-    
-}
-*/
-/*
-int main(){ // odd numbers
-    int i;
-    for ( i = 5; i <= 50; i++)
-    {
-        if (i % 2 !=0)
+        printf("Enter student's student number: ");
+        scanf("%d",&stdnum[i]);
+        printf("Enter Numbers scored: ");
+        scanf("%d",&number[i]);
+        while (number[i]>100 || number[i]<0)
         {
-            printf("%d \n",i);
+        printf("Enter valid Numbers scored: ");
+        scanf("%d",&number[i]);
+        }
+        if (number[i]>=90)
+        {
+            grade[i] = 'A';
+            countA++;
+        }
+        else if (number[i]>=78&& number[i]<90)
+        {
+            grade[i] = 'B';
+            countB++;
+        }
+        else if (number[i]>64 && number[i]<78)
+        {
+            grade[i] = 'C';
+            countC++;
+        }
+        else if (number[i]>=50 && number[i]<=64)
+        {
+            grade[i] = 'D';
+            countD++;
+        }
+        else
+        {
+            grade[i]= 'F';
+            countF++;
         }
         
+        
     }
-    
-    
-}
-*/  
-/*
-int main(){ // factorials
-    int n;
-    printf("enter the num to find its factorial: ");
-    scanf("%d", &n);
-    int factorial = 1;
-    for ( int i= 1; i <= n; i++)
+    for (int i = 0; i < 20; i++)
     {
-        factorial = factorial*i;
+        printf("%d\t\t%d\t\t%c\n",stdnum[i],number[i],grade[i]);
     }
-    printf("%d \n", factorial );
-
-}  
-*/
-/*
-int main(){ //tables in reverse order
-    int n;
-    printf("enter num ");
-    scanf("%d",&n);
-    for ( int i = 10; i >= 0; i--)
-    {
-        printf("%d \n", n*i);
-    }
-    
+    printf("Total count of As: %d\n",countA);
+    printf("Total count of Bs: %d\n",countB);
+    printf("Total count of Cs: %d\n",countC);
+    printf("Total count of Ds: %d\n",countD);
+    printf("Total count of Fs: %d",countF);
 }
-
-int main() { // sum of 2 num
-    int num1,num2;
-    printf("enter a num: ",num1);
-    scanf("%d", &num1);
-    printf("enter a num: ",num2);
-    scanf("%d", &num2);
-    printf("sum %d", num1 + num2);
-    return 0;
-}
-*/
